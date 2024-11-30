@@ -1,0 +1,230 @@
+
+body {
+    background-color: #FDE2F3;
+}
+
+.envelope-wrapper{
+    height: 500px;
+}
+
+#envelope{
+    position: relative;
+    height: 300px;
+    width: 400px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    background-color: #BEADFA;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#envelope:hover{
+    cursor: pointer;
+}
+
+.front{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index:3;
+}
+
+.flap{
+    border-top: 188px solid #BEADFA;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 102px solid transparent;
+    transform-origin: top;
+}
+
+.pocket{
+    border-left: 200px solid #D0BFFF;
+    border-right: 200px solid #D0BFFF;
+    border-bottom: 150px solid #DFCCFB;
+    border-top: 150px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;   
+}
+
+.letter{
+    position: relative;
+    background-color: #FFE5E5;
+    width: 90%;
+    height: 95%;
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.words{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.line1{
+    top: 10%;
+}
+.line2{
+    top: 20%;
+}
+.line3{
+    top: 40%;
+}
+.line4{
+    top: 65%;
+    text-align: center;
+}
+
+
+.open .flap{
+    transform: rotatex(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+
+.close .flap{
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+
+.open .letter{
+    transform: translatey(-180px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+
+.close .letter{
+    transform: translatey(0deg);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+
+.hearts{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.heart{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.heart:before, .heart:after{
+    position: absolute;
+    content: "";
+    background: #d00000;
+    width: 50px;
+    height: 80px;
+    left: 50px;
+    top: 0;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.close .heart{
+    opacity: 0;
+    animation: none;
+}
+
+.a1{
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+    animation-fill-mode: fowards;
+    animation-delay: 0.7s;
+}
+
+.a2{
+    left: 55%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+    animation-fill-mode: fowards;
+    animation-delay: 0.7s;
+}
+
+.a3{
+    left: 10%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+    animation-fill-mode: fowards;
+    animation-delay: 0.7s;
+}
+
+@keyframes slideUp{
+    0%{
+        top: 0px;
+    }
+    100%{
+        top: -600px;
+    }
+}
+
+@keyframes sideSway{
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: 50px;
+    }
+}
+.valentine {
+    text-align: center;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #ff6f61;
+    font-size: 50px;
+    margin: 50px auto;
+    padding: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pulse {
+    animation: pulseAnimation 1s ease-out infinite;  
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
